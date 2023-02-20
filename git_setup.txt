@@ -1,0 +1,20 @@
+setup git for vscode
+1. make sure Git/cmd folder is added to environment variables
+    - if not, add Git/cmd folder to environemnt variables(system): 
+        variable name: git
+        variable value: */Git/cmd
+    - check if the installation is successful by running the following line in command prompt (cmd): 
+        git --version
+3. in command prompt, run the following lines:
+        git config --global user.name "your name"
+        git config --global user.email "your@email.com"
+4. generate a ssh key and add it to your github account
+    - run the following line in cmd:.
+        ssh-keygen -t rsa -C "your@email.com"
+    - hit Enter three times to generate a .ssh folder which contains two files called "id_rsa" and "id_rsa.pub"
+    - copy the content in id_rsa.pub
+    - open the settings in github and add the new key by pasting the content that you just copied from id_rsa.pub
+5. run the following line in cmd and type "yes":
+        ssh -T git@github.com    
+6. open settings in VScode (setting.json) and add the path of git.exe:
+        "git.path": "C:/Program Files/Git/bin/git.exe"
